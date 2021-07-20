@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
                   child: Text(
                     'The Lakeside Campsite',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
