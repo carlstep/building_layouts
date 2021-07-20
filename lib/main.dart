@@ -5,40 +5,89 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Widget titleSectionStack = Container(
-      padding: const EdgeInsets.all(32),
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  padding: const EdgeInsets.only(bottom: 8),
-                  child: Text(
-                    'The Lakeside Campsite',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+    Widget titleSectionStack = Stack(
+      clipBehavior: Clip.none,
+      //padding: const EdgeInsets.all(32),
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              margin: EdgeInsets.all(20),
+              child: Center(
+                child: Image.asset(
+                  'images/fuxian-lake-pink-beach.jpg',
+                  width: 360,
+                  height: 240,
+                  fit: BoxFit.cover,
                 ),
-                Text(
-                  'Fuxian, Yunnan, China',
-                  style: TextStyle(
-                    color: Colors.grey[500],
+              ),
+            ),
+          ],
+        ),
+        Positioned(
+          top: 0,
+          left: 10,
+          child: Card(
+            color: Colors.lightGreen.shade300,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  Row(
+                    //padding: const EdgeInsets.only(bottom: 8),
+                    children: [
+                      Text(
+                        'The Lakeside Campsite',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-              ],
+                  Row(
+                    children: [
+                      Text(
+                        'Fuxian, Yunnan, China',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey[900],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
-          Icon(
-            Icons.star,
-            color: Colors.red[500],
+        ),
+        Positioned(
+          right: 30,
+          bottom: 20,
+          child: Card(
+            color: Colors.yellow[300],
+            child: Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.star,
+                    size: 30,
+                    color: Colors.red[500],
+                  ),
+                  Text(
+                    '41',
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
-          Text('41'),
-        ],
-      ),
+        ),
+      ],
     );
 
     Color color = Theme.of(context).primaryColor;
@@ -75,13 +124,8 @@ class MyApp extends StatelessWidget {
           title: Text('building_layouts'),
         ),
         body: ListView(
+          padding: EdgeInsets.only(top: 10),
           children: [
-            Image.asset(
-              'images/fuxian-lake-pink-beach.jpg',
-              width: 300,
-              height: 240,
-              fit: BoxFit.cover,
-            ),
             titleSectionStack,
             buttonSection,
             textSection,
