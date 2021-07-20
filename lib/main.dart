@@ -5,7 +5,7 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Widget titleSection = Container(
+    Widget titleSectionStack = Container(
       padding: const EdgeInsets.all(32),
       child: Row(
         children: [
@@ -82,7 +82,7 @@ class MyApp extends StatelessWidget {
               height: 240,
               fit: BoxFit.cover,
             ),
-            titleSection,
+            titleSectionStack,
             buttonSection,
             textSection,
           ],
