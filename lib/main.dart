@@ -15,11 +15,14 @@ class MyApp extends StatelessWidget {
             Container(
               margin: EdgeInsets.all(20),
               child: Center(
-                child: Image.asset(
-                  'images/fuxian-lake-pink-beach.jpg',
-                  width: 360,
-                  height: 240,
-                  fit: BoxFit.cover,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.asset(
+                    'images/fuxian-lake-pink-beach.jpg',
+                    width: 360,
+                    height: 240,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
@@ -66,6 +69,9 @@ class MyApp extends StatelessWidget {
           right: 30,
           bottom: 20,
           child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20)
+            ),
             color: Colors.yellow[300],
             child: Padding(
               padding: const EdgeInsets.all(4.0),
@@ -73,13 +79,13 @@ class MyApp extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.star,
-                    size: 30,
+                    size: 25,
                     color: Colors.red[500],
                   ),
                   Text(
                     '41',
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 16,
                     ),
                   ),
                 ],
